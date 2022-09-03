@@ -1,0 +1,332 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  max-width: 80vw;
+  margin: 20px auto 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+}
+
+nav > a {
+  color: #949EB2;
+  padding: 0 20px;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+/* Article */
+article {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.jumbocard {
+  padding: 1.5rem;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: rgb(233, 236, 239); 
+}
+
+.btn-gray {
+  display: block;
+  width: max-content;
+  font-weight: 900;
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(45, 45, 45, .2);
+}
+
+.btn-gray:hover {
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.content {
+  display: flex;
+  gap: 10px;
+  padding: 1.5rem 0;
+}
+
+.image {
+  min-width: 200px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+/* Aside */
+aside {
+  width: 40%;
+  margin: 80px auto 50px;
+}
+
+.email-input {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .3);
+}
+
+.email-input input {
+  width: 100%;
+  padding: 10px 20px;
+  border: 0;
+  outline: 0;
+}
+
+/* Footer */
+footer {
+  width: 80%;
+  margin: 20px auto 30px;
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.separator {
+  border-top: 1px solid rgba(80, 80, 80, 0.2);
+}
+
+/* Utility */
+
+.orange {
+  color: #DE3F1C;
+}
+
+.bg-green {
+  background-color: rgb(7, 202, 0);
+  color: white;
+}
+
+.med-gray {
+  color: #949EB2;
+}
+
+.hard-gray {
+  color: #6c717b;
+}
+
+.img-200 {
+  width: 200px;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.none-underline {
+  text-decoration: none;
+}
+
+.underline-orange:hover {
+  text-decoration-color: #DE3F1C;;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.fs-1 {
+  font-size: 8px;
+}
+
+.fs-2 {
+  font-size: 12px;
+}
+
+.fs-3 {
+  font-size: 16px;
+}
+
+.fs-4 {
+  font-size: 18px;
+}
+
+.fs-5 {
+  font-size: 24px;
+}
+
+.my-0 {
+  margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.my-1 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.my-2 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.my-3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1 {
+  margin-bottom: 5px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-3 {
+  margin-bottom: 10px;
+}
+
+.mb-4 {
+  margin-bottom: 15px;
+}
+
+.mb-5 {
+  margin-bottom: 20px;
+}
+
+.mt-3 {
+  margin-top: 8px;
+}
+
+.mt-5 {
+  margin-top: 15px;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 832px) {
+  header {
+    max-width: 90%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav > a {
+    padding: 0 20px 0 0;
+  }
+
+  article {
+    max-width: 90%;
+  }
+
+  .image{
+    display: none;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  .email-input {
+    flex-direction: column;
+  }
+
+  .email-input .btn-gray {
+    width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 634px){
+  header {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  header a img {
+    margin: 20px 0 0 20px;
+  }
+
+  header nav {
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+  }
+}
