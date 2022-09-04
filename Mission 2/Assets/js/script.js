@@ -18,67 +18,62 @@ document.addEventListener('DOMContentLoaded', function() {
 
   setTimeout(() => {
     textGladiator.style.visibility = 'visible';
-    bottomToTop(textGladiator, 350, 50)
+    bottomToTop(textGladiator, 350, 50, 1500)
   }, 800);
 
   setTimeout(() => {
     textGladCaption.style.visibility = 'visible';
     fadeIn(textGladCaption);
-    topToBottom(textGladCaption, 110, 130);
+    topToBottom(textGladCaption, 110, 130, 15);
     fadeIn(btn1);
   }, 3000);
-  
-  // LeftToRight(section1, 0, 1440);
 
 });
 
-function RightToLeft(element,posStart, posEnd){
-  let id = null;
+function RightToLeft(element,posStart, posEnd, duration=3000){
+  let trans = posStart - posEnd;
 
-  if(posStart < posEnd){
+  if (posStart < posEnd) {
     return 0;
   }
 
-  clearInterval(id);
-  id = setInterval(frame, 8);
-  function frame() {
-    if (posStart == posEnd) {
-      clearInterval(id);
-    } else {
-      posStart--;
-      element.style.left = posStart + 'px';
+  animate({
+    duration: duration,
+    timing: function quad(timeFraction) {
+      return 1 - Math.sin(Math.acos(timeFraction))
+    },
+    draw: function (progress) {
+      element.style.left = posStart + (-1 * (progress * trans)) + 'px';
     }
-  }
+  });
 }
 
-function LeftToRight(element, posStart, posEnd, speed=8) {
-  let id = null;
+function LeftToRight(element, posStart, posEnd, duration=3000) {
+  let trans = posStart - posEnd;
+
   if (posStart > posEnd) {
     return 0;
   }
 
-  clearInterval(id);
-  id = setInterval(frame, speed);
-
-  function frame() {
-    if (posStart == posEnd) {
-      clearInterval(id);
-    } else {
-      posStart++;
-      element.style.left = posStart + 'px';
+  animate({
+    duration: duration,
+    timing: function quad(timeFraction) {
+      return 1 - Math.sin(Math.acos(timeFraction))
+    },
+    draw: function (progress) {
+      element.style.left = posStart + (-1 * (progress * trans)) + 'px';
     }
-    
-  }
+  });
 }
 
-function bottomToTop(element, posStart, posEnd){
+function bottomToTop(element, posStart, posEnd, duration=3000){
   let trans = posStart-posEnd;
 
   if (posStart == posEnd) {
     return 0;
   }
     animate({
-      duration: 2000,
+      duration: duration,
       timing: function quad(timeFraction) {
         return 1 - Math.sin(Math.acos(timeFraction))
       },
@@ -88,19 +83,18 @@ function bottomToTop(element, posStart, posEnd){
     });
 }
 
-function topToBottom(element, posStart, posEnd) {
+function topToBottom(element, posStart, posEnd, duration=3000) {
   let trans = posStart - posEnd;
 
   if (posStart == posEnd) {
     return 0;
   }
   animate({
-    duration: 2000,
+    duration: duration,
     timing: function quad(timeFraction) {
       return 1 - Math.sin(Math.acos(timeFraction))
     },
     draw: function (progress) {
-      console.log(element.style.top);
       element.style.top = posStart + (-1 * (progress * trans)) + 'px';
     }
   });
@@ -119,3 +113,20 @@ function fadeIn(element, duration = 600) {
   };
   tick();
 }
+
+function fadeOut(element) {
+  element.style.opacity = 1;
+  (function fade() {
+    if ((element.style.opacity -= .1) < 0) {
+      element.style.display = "none";
+    } else {
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+btn1.addEventListener('click', function() {
+  // fadeOut(btn1);
+  console.log(window.screen.width);
+  LeftToRight(section1, 0, window.screen.width, 1000);
+});
