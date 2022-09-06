@@ -23,6 +23,8 @@ const thumbDown = document.getElementById('thumb-down');
 const keputusan = document.getElementById('keputusan');
 const scroolsClose1 = document.getElementById('scrolls-close-1');
 const scroolsOpen1 = document.getElementById('scrolls-open-1');
+const scroolsClose2 = document.getElementById('scrolls-close-2');
+const scroolsOpen2 = document.getElementById('scrolls-open-2');
 
 document.addEventListener('DOMContentLoaded', function() {
   RightToLeft(warrior1, 1000,750);
@@ -76,18 +78,23 @@ document.addEventListener('DOMContentLoaded', function() {
   keputusan.style.visibility = 'hidden';
   scroolsClose1.style.visibility = 'hidden';
   scroolsOpen1.style.visibility = 'hidden';
+  scroolsClose2.style.visibility = 'hidden';
+  scroolsOpen2.style.visibility = 'hidden';
 
   setTimeout(() => {
     boxChat.style.visibility = 'visible';
     thumbUp.style.visibility = 'visible';
     thumbDown.style.visibility = 'visible';
     keputusan.style.visibility = 'visible';
+    scroolsClose1.style.visibility = 'visible';
+    scroolsClose2.style.visibility = 'visible';
 
     fadeIn(boxChat);
     fadeIn(thumbUp);
     fadeIn(thumbDown);
     fadeIn(keputusan);
     fadeIn(scroolsClose1);
+    fadeIn(scroolsClose2);
 
     setInterval(() => {
       if(zoomCounter < 2){
@@ -249,5 +256,29 @@ btn1.addEventListener('click', function() {
 
 btnBack.addEventListener('click', function() {
   RightToLeft(section1, window.screen.width , 0, 1500);
+});
+
+scroolsClose1.addEventListener('click', function() {
+  scroolsOpen1.style.visibility = 'visible';
+  fadeIn(scroolsOpen1);
+});
+
+scroolsOpen1.addEventListener('click', function() {
+  fadeOut(scroolsOpen1);
+  setTimeout(() => {
+    scroolsOpen1.style.visibility = 'hidden';
+  }, 1000);
+});
+
+scroolsClose2.addEventListener('click', function() {
+  scroolsOpen2.style.visibility = 'visible';
+  fadeIn(scroolsOpen2);
+});
+
+scroolsOpen2.addEventListener('click', function() {
+  fadeOut(scroolsOpen2);
+  setTimeout(() => {
+    scroolsOpen2.style.visibility = 'hidden';
+  }, 1000);
 });
 

@@ -180,8 +180,28 @@ body {
 
 #scrolls-open-1 {
   width: 200px;
-  top: 45;
+  top: 50;
   left: 100;
+}
+
+#scrolls-close-2 {
+  width: 300px;
+  top: 50;
+  left: 400;
+}
+
+#scrolls-open-2 {
+  width: 200px;
+  top: 50;
+  left: 450;
+}
+
+#text-buka {
+  font-size: 30px;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  top: 10;
+  left: 250;
 }
 
 .i-0 {
