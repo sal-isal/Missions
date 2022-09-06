@@ -25,6 +25,7 @@ const scroolsClose1 = document.getElementById('scrolls-close-1');
 const scroolsOpen1 = document.getElementById('scrolls-open-1');
 const scroolsClose2 = document.getElementById('scrolls-close-2');
 const scroolsOpen2 = document.getElementById('scrolls-open-2');
+const textGulungan = document.getElementById('text-buka');
 
 document.addEventListener('DOMContentLoaded', function() {
   RightToLeft(warrior1, 1000,750);
@@ -80,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
   scroolsOpen1.style.visibility = 'hidden';
   scroolsClose2.style.visibility = 'hidden';
   scroolsOpen2.style.visibility = 'hidden';
+  textGulungan.style.visibility = 'hidden';
 
   setTimeout(() => {
     boxChat.style.visibility = 'visible';
@@ -88,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     keputusan.style.visibility = 'visible';
     scroolsClose1.style.visibility = 'visible';
     scroolsClose2.style.visibility = 'visible';
+    textGulungan.style.visibility = 'visible';
 
     fadeIn(boxChat);
     fadeIn(thumbUp);
@@ -95,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fadeIn(keputusan);
     fadeIn(scroolsClose1);
     fadeIn(scroolsClose2);
+    fadeIn(textGulungan);
 
     setInterval(() => {
       if(zoomCounter < 2){
