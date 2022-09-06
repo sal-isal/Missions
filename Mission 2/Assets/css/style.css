@@ -23,24 +23,27 @@ body {
   left: 0;
 }
 
-.bg-arena {
-  z-index: 1;
+.section-2 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.bg {
   width: 100% !important;
   height: 100% !important;
   overflow: hidden;
 }
 
-
 .warrior-1 {
   width: 300px;
-  z-index: 1;
   top: 200;
   left: 1000;
 }
 
 .warrior-2 {
   width: 300px;
-  z-index: 1;
   top: 190;
   left: -100;
   transform: scaleX(-1);
@@ -50,10 +53,13 @@ body {
   user-select: none;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .h1 {
   font-size: 100px;
   color: rgb(60, 30, 30);
-  z-index: 1;
   top: 350;
   left: 740;
   transform: translate(-50%, -50%);
@@ -64,7 +70,6 @@ body {
   font-family: 'Rock Salt', cursive;
   color: rgb(200, 0, 0);
   padding: 2px 10px 5px;
-  z-index: 1;
   top: 120;
   left: 740;
   transform: translate(-50%, -50%);
@@ -73,7 +78,128 @@ body {
 #btn-1{
   font-weight: 500;
   opacity: 0;
-  z-index: 2;
   top: 180;
   left: 670;
+}
+
+#btn-back{
+  width: 100px;
+  top: 50;
+  left: 1400;
+}
+
+#btn-back:hover{
+  width: 90px;
+  top: 50;
+  left: 1405;
+}
+
+#btn-attack-1 {
+  display: none;
+  width: 120px;
+  top: 530;
+  left: 850;
+  cursor: pointer;
+  transform: scaleX(-1);
+}
+
+#btn-attack-1:active {
+  top: 305;
+  left: 1105;
+  width: 120px;
+}
+
+#btn-attack-2 {
+  display: none;
+  width: 120px;
+  top: 530;
+  left: 530;
+  cursor: pointer;
+}
+
+.detail-warrior-1 {
+  width: 300px;
+  top: 250;
+  left: 1100;
+}
+
+.detail-warrior-2 {
+  width: 300px;
+  top: 250;
+  left: 100;
+}
+
+.smoke-1 {
+  width: 150px;
+  top: 480px;
+  left: 1000px;
+}
+
+.smoke-2 {
+  width: 150px;
+  top: 490px;
+  left: 400px;
+}
+
+#box-chat {
+  width: 200px;
+  top: 200;
+  left: 800;
+}
+
+#thumb-up {
+  width: 50px;
+  top: 530;
+  left: 620;
+}
+
+#thumb-down {
+  width: 50px;
+  top: 535;
+  left: 870;
+}
+
+#keputusan {
+  width: 310px;
+  top: 565;
+  left: 620;
+}
+
+#text-back {
+  font-size: 30px;
+  color: white;
+  top: 100;
+  left: 1415;
+}
+
+#scrolls-close-1 {
+  width: 300px;
+  top: 50;
+  left: 50;
+}
+
+#scrolls-open-1 {
+  width: 200px;
+  top: 45;
+  left: 100;
+}
+
+.i-0 {
+  z-index: 0;
+}
+
+.i-1 {
+  z-index: 1;
+}
+.i-2 {
+  z-index: 2;
+}
+.i-3 {
+  z-index: 3;
+}
+.i-4 {
+  z-index: 4;
+}
+.i-5 {
+  z-index: 5;
 }
